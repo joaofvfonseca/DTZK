@@ -1,0 +1,25 @@
+{
+  "name": "dtzk_dbapi",
+  "version": "0.0.1",
+  "description": "Simple API for the game DTZK which allows interaction between the game, the GitHub Pages website (leaderboard) and the SQL database.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Fonnnn/DTZK/tree/master/DatabaseAPI"
+  },
+  "keywords": [
+    "dtzk",
+    "api",
+    "rest",
+    "fon",
+    "joaoffonseca.pt"
+  ],
+  "author": "João Fonseca",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
