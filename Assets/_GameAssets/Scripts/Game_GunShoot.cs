@@ -88,7 +88,6 @@ public class Game_GunShoot : MonoBehaviour
                 {
                     Instantiate(impactRock, hit.point, Quaternion.LookRotation(hit.normal));
                 }
-                Debug.Log(hit.distance);
             }
         }
     }
