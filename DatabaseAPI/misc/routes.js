@@ -1,6 +1,6 @@
 let router = require('express').Router();
 
-router.get('/', function(req, res){
+router.get('/', function (req, res) {
     res.json({
         status: 'API Working',
         message: 'Welcome to DTZK\'s database REST API!'

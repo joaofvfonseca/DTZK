@@ -1,7 +1,11 @@
 User = require('./userModel');
 
 exports.list = function (req, res) {
-    User.find({pub: {$exists: true}}, 'pub', function (err, listResults) {
+    User.find({
+        pub: {
+            $exists: true
+        }
+    }, 'pub', function (err, listResults) {
         if (err) {
             res.json({
                 status: 'error',

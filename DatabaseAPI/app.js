@@ -6,7 +6,9 @@ let api_routes = require('./misc/routes');
 let app = express();
 let port = process.env.PORT || 8080;
 
-mongoose.connect('REDACTED', {useNewUrlParser: true});
+mongoose.connect('REDACTED', {
+    useNewUrlParser: true
+});
 var db = mongoose.connection;
 
 app.use(bodyParser.json());
