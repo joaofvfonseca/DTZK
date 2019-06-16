@@ -122,7 +122,10 @@ public class Game_Manager : MonoBehaviour
 
     private void FPlayerHasDied()
     {
-        if (!(PlayerPrefs.HasKey("Highscore")) || (PlayerPrefs.GetInt("Highscore") < playerScore)) PlayerPrefs.SetInt("Highscore", playerScore);
+        if (!(PlayerPrefs.HasKey("PHighscore")) || (PlayerPrefs.GetInt("PHighscore") < playerScore))
+        {
+            PlayerPrefs.SetInt("PHighscore", playerScore);
+        }
         mainCamera.SetActive(false);
         player.GetComponent<Game_PlayerMovement>().enabled = false;
         player.GetComponent<Game_PlayerCamera>().enabled = false;
@@ -131,7 +134,6 @@ public class Game_Manager : MonoBehaviour
         ui_PlayerHUDObject.SetActive(false);
         ui_DamageIndicator.SetActive(false);
         ui_GameOverObject.SetActive(true);
-        //ui_HighscoreText.text = PlayerPrefs.GetInt("Highscore").ToString();
         UITextChange(Game_ManagerUI.UIText.highscore);
         UITextChange(Game_ManagerUI.UIText.finalRounds);
         UITextChange(Game_ManagerUI.UIText.finalScore);
