@@ -15,8 +15,6 @@ public class Game_Manager : MonoBehaviour
     [SerializeField] private GameObject ui_PlayerHUDObject;
     [SerializeField] private GameObject ui_GameOverObject;
     [SerializeField] private GameObject ui_DamageIndicator;
-    //[SerializeField] private GameObject ui_PauseMenu;
-
     [Space(10)]
     [SerializeField] private TextMeshProUGUI ui_AmmoText;
     [SerializeField] private TextMeshProUGUI ui_AmmoReservText;
@@ -25,7 +23,6 @@ public class Game_Manager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI ui_HighscoreText;
     [SerializeField] private TextMeshProUGUI ui_SurvivedRounds;
     [SerializeField] private TextMeshProUGUI ui_ScoreAtEnd;
-
     [Space(10)]
     [SerializeField] private AudioSource EndRoundZombieSound;
 
@@ -79,8 +76,6 @@ public class Game_Manager : MonoBehaviour
     {
         StateSwitcher();
         AddScore();
-        //UpdateUI();
-        //Pause();
     }
 
     private void StateSwitcher()
@@ -125,6 +120,11 @@ public class Game_Manager : MonoBehaviour
         if (!(PlayerPrefs.HasKey("PHighscore")) || (PlayerPrefs.GetInt("PHighscore") < playerScore))
         {
             PlayerPrefs.SetInt("PHighscore", playerScore);
+            if (!hasSentToDB)
+            {
+                SendToDB();
+                hasSentToDB = true;
+            }
         }
         mainCamera.SetActive(false);
         player.GetComponent<Game_PlayerMovement>().enabled = false;
@@ -139,11 +139,6 @@ public class Game_Manager : MonoBehaviour
         UITextChange(Game_ManagerUI.UIText.finalScore);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
-        if (!hasSentToDB)
-        {
-            SendToDB();
-            hasSentToDB = true;
-        } 
     }
 
     private IEnumerator SpawnZombies(float zombiesToSpawn, float zombieHealth)
@@ -251,16 +246,6 @@ public class Game_Manager : MonoBehaviour
         return false;
     }
 
-    private void UpdateUI()
-    {
-        ui_AmmoText.text = player.GetComponent<Game_PlayerWeapon>().GetCurrentEquipedGun().GetComponent<Game_zGunShoot>().GetCurrentAmmo().ToString();
-        ui_AmmoReservText.text = "/ "+player.GetComponent<Game_PlayerWeapon>().GetCurrentEquipedGun().GetComponent<Game_zGunShoot>().GetCurrentReservAmmo().ToString();
-        ui_RoundText.text = roundNumber.ToString();
-        ui_SurvivedRounds.text = "you survived  "+  roundNumber.ToString() + " rounds";
-        ui_ScoreAtEnd.text = "and got " + playerScore.ToString() + " points";
-        ui_ScoreText.text = avaiableScore.ToString();
-    }
-
     public void PlayAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -275,26 +260,4 @@ public class Game_Manager : MonoBehaviour
     {
 
     }
-
-    /*private void Pause()
-    {
-        if (Input.GetButtonDown("Cancel"))
-        {
-            if (!ui_PauseMenu.activeInHierarchy)
-            {
-                Time.timeScale = 0;
-                ui_PauseMenu.SetActive(true);
-            }
-            else if (ui_PauseMenu.activeInHierarchy)
-            {
-                Resume();
-            }
-        }
-    }
-
-    public void Resume()
-    {
-        Time.timeScale = 1;
-        ui_PauseMenu.SetActive(false);
-    }*/
 }
