@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using System;
+using UnityEngine.Networking;
 
 public class Game_Manager : MonoBehaviour
 {
@@ -258,6 +259,20 @@ public class Game_Manager : MonoBehaviour
 
     private void SendToDB()
     {
+        string jsonString = "{"+'"'+"gen_id"+'"'+':'+'"'+PlayerPrefs.GetString("genid")+'"'+','+
+            '"'+"username"+'"'+':'+'"'+PlayerPrefs.GetString("Username")+ '"' + ','+
+            '"' + "score" +'"'+':'+'"'+PlayerPrefs.GetInt("PHighscore")+'"'+','+
+            '"' + "secret"+'"'+':'+'"'+ "REDACTED" + '"'+'}';
+        StartCoroutine(Post("http://ts.aspesports.com:8080/dtzk/api/add", jsonString));
+    }
 
+    private IEnumerator Post(string url, string jsonString)
+    {
+        UnityWebRequest req = new UnityWebRequest(url, "POST");
+        byte[] rawJsonString = System.Text.Encoding.UTF8.GetBytes(jsonString);
+        req.uploadHandler = (UploadHandler) new UploadHandlerRaw(rawJsonString);
+        req.downloadHandler = (DownloadHandler) new DownloadHandlerBuffer();
+        req.SetRequestHeader("Content-Type", "application/json");
+        yield return req.SendWebRequest();
     }
 }

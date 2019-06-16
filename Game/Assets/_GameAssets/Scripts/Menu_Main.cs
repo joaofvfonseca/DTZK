@@ -28,6 +28,7 @@ public class Menu_Main : MonoBehaviour
         {
             menuUsernamePlaceholder.text = PlayerPrefs.GetString("Username");
         }
+        GenerateID();
     }
 
     // Update is called once per frame
@@ -52,10 +53,20 @@ public class Menu_Main : MonoBehaviour
         }
     }
 
-    private int GenerateID()
+    private void GenerateID()
     {
-        //wish i had time
-        return 0;
+        if (!PlayerPrefs.HasKey("genid"))
+        {
+            if(SystemInfo.deviceUniqueIdentifier != SystemInfo.unsupportedIdentifier)
+            {
+                PlayerPrefs.SetString("genid", SystemInfo.deviceUniqueIdentifier);
+            }
+            else
+            {
+                string backupgenid = System.Guid.NewGuid().ToString();
+                PlayerPrefs.SetString("genid", backupgenid);
+            }
+        }
     }
 
     public void PlayGame()
