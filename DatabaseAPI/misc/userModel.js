@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var userSchema = mongoose.Schema({
     gen_id: {
-        type: Number,
+        type: String,
         required: true,
     },
     last_mod: {
