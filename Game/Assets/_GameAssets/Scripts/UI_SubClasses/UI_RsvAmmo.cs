@@ -1,18 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using TMPro;
 
-public class UI_RsvAmmo : MonoBehaviour
+public class UI_RsvAmmo : Class_UpdateTextComp
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void GoAndUpdate()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        param = GameObject.Find("/Player").GetComponent<Game_PlayerWeapon>().GetCurrentEquipedGun().GetComponent<Game_zGunShoot>().GetCurrentReservAmmo();
+        GetComponent<TextMeshProUGUI>().text = string.Format(text, param);
     }
 }

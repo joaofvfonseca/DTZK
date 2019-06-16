@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.Audio;
 
-public class zGame_GunShoot : MonoBehaviour
+public class Game_zGunShoot : MonoBehaviour
 {
     [SerializeField] private Camera playerCamera;
     [SerializeField] private ParticleSystem muzzleFlash;
@@ -167,5 +167,6 @@ public class zGame_GunShoot : MonoBehaviour
     public void AddAmmoToReserve()
     {
         currentReservAmmo = maxReservAmmo;
+        UITextChange(Game_ManagerUI.UIText.rsvAmmo);
     }
 }

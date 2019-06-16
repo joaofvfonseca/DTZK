@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class Game_PlayerWeapon : MonoBehaviour
 {
@@ -85,7 +86,7 @@ public class Game_PlayerWeapon : MonoBehaviour
 
     private void AddAmmo()
     {
-        gunObj.GetComponent<zGame_GunShoot>().AddAmmoToReserve();
+        gunObj.GetComponent<Game_zGunShoot>().AddAmmoToReserve();
     }
 
     private void ChangeActualGun()

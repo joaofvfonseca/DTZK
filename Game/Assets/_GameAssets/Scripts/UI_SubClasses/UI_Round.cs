@@ -1,18 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using TMPro;
 
-public class UI_Round : MonoBehaviour
+public class UI_Round : Class_UpdateTextComp
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void GoAndUpdate()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        param = GameObject.Find("!MANAGER").GetComponent<Game_Manager>().GetRoundNumber();
+        GetComponent<TextMeshProUGUI>().text = string.Format(text, param);
     }
 }

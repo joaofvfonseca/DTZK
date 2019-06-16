@@ -1464,7 +1464,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 121982932}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3552f0281e3d3f9489addf77f5c011bb, type: 3}
+  m_Script: {fileID: 11500000, guid: ae5fd657899842645aaf5c7e9b68b057, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: '{0}'
@@ -2041,8 +2041,8 @@ GameObject:
   m_Component:
   - component: {fileID: 157064407}
   - component: {fileID: 157064409}
-  - component: {fileID: 157064408}
   - component: {fileID: 157064410}
+  - component: {fileID: 157064408}
   m_Layer: 5
   m_Name: AmmoReserve
   m_TagString: Untagged
@@ -2200,7 +2200,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 157064406}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3552f0281e3d3f9489addf77f5c011bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 027b8719d90aad549b8f6a2874212955, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: / {0}
@@ -6634,7 +6634,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 547919181}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3552f0281e3d3f9489addf77f5c011bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 01c60f35463c7224cbf4730e2b4d7d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: '{0}'
@@ -17690,8 +17690,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1132545370}
   - component: {fileID: 1132545372}
-  - component: {fileID: 1132545371}
   - component: {fileID: 1132545373}
+  - component: {fileID: 1132545371}
   m_Layer: 5
   m_Name: Text (TMP) (4)
   m_TagString: Untagged
@@ -17849,10 +17849,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1132545369}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3552f0281e3d3f9489addf77f5c011bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f83e5890a9ced44d9c6e34122724b12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
+  text: and got {0} points
 --- !u!1001 &1139337132
 PrefabInstance:
   m_ObjectHideFlags: 0

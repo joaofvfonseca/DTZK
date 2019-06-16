@@ -1,18 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using TMPro;
 
-public class UI_Highscore : MonoBehaviour
+public class UI_Highscore : Class_UpdateTextComp
 {
-    // Start is called before the first frame update
-    void Start()
+    public override void GoAndUpdate()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        param = PlayerPrefs.GetInt("Highscore");
+        GetComponent<TextMeshProUGUI>().text = string.Format(text, param);
     }
 }

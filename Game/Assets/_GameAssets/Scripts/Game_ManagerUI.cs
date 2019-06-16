@@ -20,7 +20,13 @@ public class Game_ManagerUI : MonoBehaviour
     private void Awake()
     {
         Game_Manager.UITextChange += UpdateUI;
-        zGame_GunShoot.UITextChange += UpdateUI;
+        Game_zGunShoot.UITextChange += UpdateUI;
+    }
+
+    private void OnDestroy()
+    {
+        Game_Manager.UITextChange -= UpdateUI;
+        Game_zGunShoot.UITextChange -= UpdateUI;
     }
 
     private void UpdateUI(UIText compToUpdate)
