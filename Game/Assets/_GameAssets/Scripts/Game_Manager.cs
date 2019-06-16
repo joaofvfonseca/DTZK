@@ -70,6 +70,9 @@ public class Game_Manager : MonoBehaviour
 
         scoreQueue = new Queue<Class_Score>();
         scores = new List<Class_Score>();
+
+        UITextChange(Game_ManagerUI.UIText.score);
+        UITextChange(Game_ManagerUI.UIText.round);
     }
 
     private void Update()

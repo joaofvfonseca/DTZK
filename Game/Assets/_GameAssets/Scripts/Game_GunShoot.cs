@@ -44,6 +44,8 @@ public class Game_GunShoot : MonoBehaviour
 
         currentAmmo = maxAmmo;
         currentReservAmmo = maxReservAmmo;
+        UITextChange(Game_ManagerUI.UIText.ammo);
+        UITextChange(Game_ManagerUI.UIText.rsvAmmo);
         isReloading = false;
     }
 

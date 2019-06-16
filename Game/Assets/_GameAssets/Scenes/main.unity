@@ -1467,8 +1467,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3552f0281e3d3f9489addf77f5c011bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
-  param: 0
+  text: '{0}'
+  param: 7
 --- !u!1001 &122581756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2204,8 +2204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3552f0281e3d3f9489addf77f5c011bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
-  param: 0
+  text: / {0}
+  param: 32
 --- !u!1001 &159974974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4165,7 +4165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: '{0}'
-  param: 123456
+  param: 123
 --- !u!1001 &335555623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6640,7 +6640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3552f0281e3d3f9489addf77f5c011bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
+  text: '{0}'
   param: 0
 --- !u!1001 &550293707
 PrefabInstance:
@@ -20691,8 +20691,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3552f0281e3d3f9489addf77f5c011bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
-  param: 0
+  text: '{0}'
+  param: 23
 --- !u!4 &1397485100 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000012911546854, guid: 7acc747a6c025d44fbda0cc2f372ebbf,
