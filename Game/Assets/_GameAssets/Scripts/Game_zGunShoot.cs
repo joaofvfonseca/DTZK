@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using UnityEngine.Audio;
 
-public class Game_GunShoot : MonoBehaviour
+public class zGame_GunShoot : MonoBehaviour
 {
     [SerializeField] private Camera playerCamera;
     [SerializeField] private ParticleSystem muzzleFlash;
@@ -140,6 +140,7 @@ public class Game_GunShoot : MonoBehaviour
                 currentAmmo += currentReservAmmo;
                 currentReservAmmo = 0;
             }
+            UITextChange(Game_ManagerUI.UIText.ammo);
             UITextChange(Game_ManagerUI.UIText.rsvAmmo);
             animator.SetBool("reloading", false);
             yield return new WaitForSeconds(0.25f);

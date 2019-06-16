@@ -40,7 +40,7 @@ public class Game_Manager : MonoBehaviour
 
     private bool spawningDone;
 
-    private Game_GunShoot gunShoot;
+    private zGame_GunShoot gunShoot;
     private List<Class_Score> scores;
 
     public enum RoundState
@@ -207,6 +207,16 @@ public class Game_Manager : MonoBehaviour
         return roundNumber;
     }
 
+    public int GetAvaiableScore()
+    {
+        return avaiableScore;
+    }
+
+    public int GetFinalScore()
+    {
+        return playerScore;
+    }
+
     private void AddScore()
     {
         if (scoreQueue.Count == 0) return;
@@ -240,8 +250,8 @@ public class Game_Manager : MonoBehaviour
 
     private void UpdateUI()
     {
-        ui_AmmoText.text = player.GetComponent<Game_PlayerWeapon>().GetCurrentEquipedGun().GetComponent<Game_GunShoot>().GetCurrentAmmo().ToString();
-        ui_AmmoReservText.text = "/ "+player.GetComponent<Game_PlayerWeapon>().GetCurrentEquipedGun().GetComponent<Game_GunShoot>().GetCurrentReservAmmo().ToString();
+        ui_AmmoText.text = player.GetComponent<Game_PlayerWeapon>().GetCurrentEquipedGun().GetComponent<zGame_GunShoot>().GetCurrentAmmo().ToString();
+        ui_AmmoReservText.text = "/ "+player.GetComponent<Game_PlayerWeapon>().GetCurrentEquipedGun().GetComponent<zGame_GunShoot>().GetCurrentReservAmmo().ToString();
         ui_RoundText.text = roundNumber.ToString();
         ui_SurvivedRounds.text = "you survived  "+  roundNumber.ToString() + " rounds";
         ui_ScoreAtEnd.text = "and got " + playerScore.ToString() + " points";

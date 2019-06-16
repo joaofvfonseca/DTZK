@@ -85,7 +85,7 @@ public class Game_PlayerWeapon : MonoBehaviour
 
     private void AddAmmo()
     {
-        gunObj.GetComponent<Game_GunShoot>().AddAmmoToReserve();
+        gunObj.GetComponent<zGame_GunShoot>().AddAmmoToReserve();
     }
 
     private void ChangeActualGun()

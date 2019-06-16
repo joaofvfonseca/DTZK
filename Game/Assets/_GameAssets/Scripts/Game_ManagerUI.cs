@@ -17,10 +17,10 @@ public class Game_ManagerUI : MonoBehaviour
         finalRounds
     }
 
-    private void Start()
+    private void Awake()
     {
         Game_Manager.UITextChange += UpdateUI;
-        Game_GunShoot.UITextChange += UpdateUI;
+        zGame_GunShoot.UITextChange += UpdateUI;
     }
 
     private void UpdateUI(UIText compToUpdate)

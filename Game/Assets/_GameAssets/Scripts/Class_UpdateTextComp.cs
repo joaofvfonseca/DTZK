@@ -1,16 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
+﻿using UnityEngine;
 
 public class Class_UpdateTextComp : MonoBehaviour
 {
-    [SerializeField] private string text;
-    [SerializeField] private int param;
+    [SerializeField]
+    protected string text;
+    protected int param;
 
-    public void GoAndUpdate()
+    public virtual void GoAndUpdate()
     {
-        GetComponent<TextMeshProUGUI>().text = string.Format(text, param);
-        Debug.Log("hey, it works");
+        Debug.Log("parent being called, not child");
     }
 }

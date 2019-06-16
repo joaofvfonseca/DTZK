@@ -1468,7 +1468,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: '{0}'
-  param: 7
 --- !u!1001 &122581756
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2205,7 +2204,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: / {0}
-  param: 32
 --- !u!1001 &159974974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4161,11 +4159,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 329531629}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3552f0281e3d3f9489addf77f5c011bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 82d4d42bd18c9034db82f9f701b5507d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: '{0}'
-  param: 123
 --- !u!1001 &335555623
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6641,7 +6638,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: '{0}'
-  param: 0
 --- !u!1001 &550293707
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17857,7 +17853,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: 
-  param: 0
 --- !u!1001 &1139337132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17940,8 +17935,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1140974849}
   - component: {fileID: 1140974851}
-  - component: {fileID: 1140974850}
   - component: {fileID: 1140974852}
+  - component: {fileID: 1140974850}
   m_Layer: 5
   m_Name: Text (TMP) (3)
   m_TagString: Untagged
@@ -18099,11 +18094,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1140974848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3552f0281e3d3f9489addf77f5c011bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 76d54f4c6cc875f43a96284d920f1dff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: 
-  param: 0
+  text: you survived {0} rounds
 --- !u!1001 &1145449121
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20529,8 +20523,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1385429718}
   - component: {fileID: 1385429719}
-  - component: {fileID: 1385429720}
   - component: {fileID: 1385429721}
+  - component: {fileID: 1385429720}
   m_Layer: 5
   m_Name: AmmoCurrent
   m_TagString: Untagged
@@ -20688,11 +20682,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1385429717}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3552f0281e3d3f9489addf77f5c011bb, type: 3}
+  m_Script: {fileID: 11500000, guid: b349d371ec5e0bb4faf467def9510379, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   text: '{0}'
-  param: 23
 --- !u!4 &1397485100 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000012911546854, guid: 7acc747a6c025d44fbda0cc2f372ebbf,
