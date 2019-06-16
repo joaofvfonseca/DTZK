@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
+using System;
 
 public class Game_Manager : MonoBehaviour
 {
@@ -54,6 +55,8 @@ public class Game_Manager : MonoBehaviour
     public RoundState currentState;
     public Queue<Class_Score> scoreQueue;
 
+    public static event Action<Game_ManagerUI.UIText> UITextChange;
+
     private void Start()
     {
         player = GameObject.Find("/Player");
@@ -73,7 +76,7 @@ public class Game_Manager : MonoBehaviour
     {
         StateSwitcher();
         AddScore();
-        UpdateUI();
+        //UpdateUI();
         //Pause();
     }
 
@@ -125,7 +128,10 @@ public class Game_Manager : MonoBehaviour
         ui_PlayerHUDObject.SetActive(false);
         ui_DamageIndicator.SetActive(false);
         ui_GameOverObject.SetActive(true);
-        ui_HighscoreText.text = PlayerPrefs.GetInt("Highscore").ToString();
+        //ui_HighscoreText.text = PlayerPrefs.GetInt("Highscore").ToString();
+        UITextChange(Game_ManagerUI.UIText.highscore);
+        UITextChange(Game_ManagerUI.UIText.finalRounds);
+        UITextChange(Game_ManagerUI.UIText.finalScore);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         if (!hasSentToDB)
@@ -141,7 +147,7 @@ public class Game_Manager : MonoBehaviour
         {
             zombiesInMap += 1;
             yield return new WaitForSeconds(3f);
-            int spawnIndex = Random.Range(0, spawns.Length);
+            int spawnIndex = UnityEngine.Random.Range(0, spawns.Length);
             GameObject zombie = Instantiate(zombiePrefab, spawns[spawnIndex].position, new Quaternion());
             zombie.GetComponent<Game_ZombieHealth>().SetHealth(zombieHealth);
         }
@@ -189,6 +195,7 @@ public class Game_Manager : MonoBehaviour
     {
         EndRoundZombieSound.Play();
         roundNumber += 1;
+        UITextChange(Game_ManagerUI.UIText.round);
         yield return null;
     }
 
@@ -203,6 +210,7 @@ public class Game_Manager : MonoBehaviour
         Class_Score scoreObj = scoreQueue.Dequeue();
         playerScore += scoreObj.scoreValue;
         avaiableScore += scoreObj.scoreValue;
+        UITextChange(Game_ManagerUI.UIText.score);
         scores.Add(scoreObj);
     }
 

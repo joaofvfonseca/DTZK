@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEngine.Audio;
 
 public class Game_GunShoot : MonoBehaviour
@@ -32,6 +33,8 @@ public class Game_GunShoot : MonoBehaviour
 
     private float nextFire;
 
+    public static event Action<Game_ManagerUI.UIText> UITextChange;
+
     private void Start()
     {
         gameManager = GameObject.Find("/!MANAGER").GetComponent<Game_Manager>();
@@ -50,6 +53,8 @@ public class Game_GunShoot : MonoBehaviour
 
         currentAmmo = maxAmmo;
         currentReservAmmo = maxReservAmmo;
+        UITextChange(Game_ManagerUI.UIText.ammo);
+        UITextChange(Game_ManagerUI.UIText.rsvAmmo);
         isReloading = false;
         animator.SetBool("reloading", false);
     }
@@ -73,6 +78,7 @@ public class Game_GunShoot : MonoBehaviour
             }
             if (isReloading) return;
             currentAmmo -= 1;
+            UITextChange(Game_ManagerUI.UIText.ammo);
             shotSound.Play();
             muzzleFlash.Play();
             RaycastHit hit;
@@ -132,6 +138,7 @@ public class Game_GunShoot : MonoBehaviour
                 currentAmmo += currentReservAmmo;
                 currentReservAmmo = 0;
             }
+            UITextChange(Game_ManagerUI.UIText.rsvAmmo);
             animator.SetBool("reloading", false);
             yield return new WaitForSeconds(0.25f);
             isReloading = false;
