@@ -14,6 +14,8 @@ public class Game_PlayerWeapon : MonoBehaviour
     private GameObject gunObj;
     private string initialInteract;
 
+    public bool ola;
+
     private enum SelectedGun
     {
         pistol,
@@ -29,6 +31,7 @@ public class Game_PlayerWeapon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        ola = false;
         equippedGun = SelectedGun.pistol;
         gunObj = pistol;
         currentlySelectedGun = SelectedGun.none;
@@ -40,6 +43,7 @@ public class Game_PlayerWeapon : MonoBehaviour
     void Update()
     {
         GrabFromWall();
+        CheapHack();
     }
 
     private void OnTriggerEnter(Collider collision)
@@ -117,5 +121,14 @@ public class Game_PlayerWeapon : MonoBehaviour
     public GameObject GetCurrentEquipedGun()
     {
         return gunObj;
+    }
+
+    private void CheapHack()
+    {
+        if (ola)
+        {
+            AddAmmo();
+            ola = false;
+        }
     }
 }

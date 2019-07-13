@@ -15011,6 +15011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac02c902a1d817488692e05b84fcee0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ammoReloadComp: {fileID: 933752266}
 --- !u!1001 &907444166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15660,6 +15661,7 @@ MonoBehaviour:
   shotgun: {fileID: 7779324763134751282}
   rifle: {fileID: 4607096347227449595}
   interactString: {fileID: 742098210}
+  ola: 0
 --- !u!1001 &933779828
 PrefabInstance:
   m_ObjectHideFlags: 0

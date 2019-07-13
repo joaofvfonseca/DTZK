@@ -2,6 +2,9 @@
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using System.Net;
+using System.Net.Sockets;
+
 
 public class Menu_Main : MonoBehaviour
 {
@@ -11,6 +14,7 @@ public class Menu_Main : MonoBehaviour
     [SerializeField] private TextMeshProUGUI mandatoryUsernameText;
     [SerializeField] private TextMeshProUGUI menuUsernamePlaceholder;
     [SerializeField] private TextMeshProUGUI menuUsernameText;
+    [SerializeField] private TextMeshProUGUI ipText;
     [SerializeField] private Button menuSetUsernameButton;
     [SerializeField] private Button mandatorySetUsernameButton;
 
@@ -29,6 +33,7 @@ public class Menu_Main : MonoBehaviour
             menuUsernamePlaceholder.text = PlayerPrefs.GetString("Username");
         }
         GenerateID();
+        ipText.text = string.Format("Your local IP is {0}", LocalIP());
     }
 
     // Update is called once per frame
@@ -98,5 +103,17 @@ public class Menu_Main : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("Username")) return true;
         return false;
+    }
+
+    private string LocalIP()
+    {
+        string localIP = "null";
+        using (Socket socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, 0))
+        {
+            socket.Connect("8.8.8.8", 65530);
+            IPEndPoint endPoint = socket.LocalEndPoint as IPEndPoint;
+            localIP = endPoint.Address.ToString();
+        }
+        return localIP;
     }
 }

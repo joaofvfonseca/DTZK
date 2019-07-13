@@ -15,7 +15,7 @@ public class CrateManager : MonoBehaviour
     {
         if ((Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began) || (Input.GetKeyDown(KeyCode.K)))
         {
-            dtzk_tcpClient.SendData("ammo... btw it is working!");
+            dtzk_tcpClient.SendData("ammo");
         }
     }
 }

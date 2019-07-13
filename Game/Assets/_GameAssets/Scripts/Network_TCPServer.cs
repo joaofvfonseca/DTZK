@@ -10,6 +10,7 @@ public class Network_TCPServer : MonoBehaviour
     private TcpListener tcpListener;
     private Thread tcpListenerThread;
     private TcpClient connectTcpClient;
+    [SerializeField] private Game_PlayerWeapon ammoReloadComp;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class Network_TCPServer : MonoBehaviour
                             Array.Copy(bytes, 0, incomingData, 0, length);
                             string message = Encoding.ASCII.GetString(incomingData);
                             Debug.Log(message);
+                            ammoReloadComp.ola = true;
                         }
                     }
                 }
