@@ -279,14 +279,14 @@ RectTransform:
   m_GameObject: {fileID: 233009167}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 11.212, y: 1, z: 1}
+  m_LocalScale: {x: 16.070824, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 811527742}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 910.9999}
+  m_AnchoredPosition: {x: 0.000061035, y: 910.9999}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &233009169
@@ -418,7 +418,7 @@ MonoBehaviour:
   m_fontSizeMin: 12
   m_fontSizeMax: 18
   m_fontStyle: 0
-  m_textAlignment: 4098
+  m_textAlignment: 514
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 0
@@ -547,7 +547,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.7075472, g: 0.31038624, b: 0.31038624, a: 1}
+  m_BackGroundColor: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1078,7 +1078,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1157,7 +1157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statusText: {fileID: 251552917}
-  inputText: {fileID: 756143845}
+  inputText: {fileID: 1066021030}
 --- !u!4 &819611348
 Transform:
   m_ObjectHideFlags: 0

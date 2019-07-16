@@ -64,4 +64,14 @@ public class Network_TCPServer : MonoBehaviour
         }
         return localIP;
     }
+
+    private void OnApplicationQuit()
+    {
+        tcpListener.Stop();
+    }
+
+    private void OnDestroy()
+    {
+        tcpListener.Stop();
+    }
 }
