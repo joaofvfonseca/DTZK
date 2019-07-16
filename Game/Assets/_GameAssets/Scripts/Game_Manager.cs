@@ -275,4 +275,14 @@ public class Game_Manager : MonoBehaviour
         req.SetRequestHeader("Content-Type", "application/json");
         yield return req.SendWebRequest();
     }
+
+    public void PostToFacebook()
+    {
+        Application.OpenURL("http://www.facebook.com/sharer/sharer.php?u=https://github.com/Fonnnn/DTZK/releases/latest&quote=I just did " + playerScore + " points in DTZK by João Fonseca ( https://joaoffonseca.pt ). Check it out!&display=popup");
+    }
+
+    public void PostToTwitter()
+    {
+        Application.OpenURL("https://twitter.com/intent/tweet?url=https://github.com/Fonnnn/DTZK/releases/latest&text=I just did " + playerScore + " points in DTZK by @ASPFon . Check it out!&hashtags=dtzk&related=ASPFon");
+    }
 }
